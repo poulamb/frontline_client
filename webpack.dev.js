@@ -10,12 +10,12 @@ module.exports = merge(common, {
     port: 3000,
     proxy: [
       {
-        context: ["/api"],
+        context: ["/api", "/images"],
         target: "http://0.0.0.0:3080/",
         secure: false,
         changeOrigin: true,
         logLevel: "debug"
-      }
+      },
     ]
   },
   devtool: "inline-source-map",
@@ -24,5 +24,5 @@ module.exports = merge(common, {
     aggregateTimeout: 300,
     poll: 1000,
     ignored: /node_modules/
-  }
+  },
 });
