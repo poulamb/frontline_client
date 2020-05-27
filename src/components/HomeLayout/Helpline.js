@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Modal, Row, Col, Button } from "antd";
+import { Link } from "react-router-dom";
 
 import { WomanOutlined } from "@ant-design/icons";
+import { LineChartOutlined } from "@ant-design/icons";
 import { Spacer } from "@components/Utils";
 import { helplineLinks } from "@utils/constants";
 
@@ -38,17 +40,30 @@ const Helpline = () => {
   return (
     <Row>
       <HelplineModal showModal={showModal} setShowModal={setShowModal} />
-      <Col span={24} className="bottom-btn-containers-alt">
+      <Col span={12} className="bottom-btn-containers-alt">
+          <div
+            className="goto-text ftl"
+            style={{ textAlign: "center" }}
+          >
+            <Link to="/stats">
+            <Button className="orange-btn" >
+              <LineChartOutlined /> View Dashboard
+          </Button>
+          </Link>
+          </div>
+      </Col>
+      <Col span={12} className="bottom-btn-containers-alt">
         <div
           className="goto-text ftl"
           style={{ textAlign: "center" }}
           onClick={() => setShowModal(true)}
         >
-          <Button className="orange-btn">
+          <Button className="orange-btn" >
             <WomanOutlined /> Women&apos;s Helpline
           </Button>
         </div>
       </Col>
+
     </Row>
   );
 };
