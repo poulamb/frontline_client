@@ -21,6 +21,7 @@ import Logout from "./Logout";
 import LoginRequired from "./LoginRequired";
 import NGO from "./NGO";
 import Authorize, { Fallback } from "@components/Authorize";
+import StatsDashboard from "../Statistics/StatsDashboard";
 
 const TopBar = lazy(() => import("@components/Navigation/TopBar"));
 const SideBar = lazy(() => import("@components/Navigation/SideBar"));
@@ -102,6 +103,9 @@ function App({ loggedIn, user, volunteerCount }) {
                     </Route>
                     <Route path="/logout">
                       <Logout {...pageProps} />
+                    </Route>
+                    <Route path="/stats">
+                      <StatsDashboard />
                     </Route>
                   </div>
                 </Content>
