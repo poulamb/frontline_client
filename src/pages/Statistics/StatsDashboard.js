@@ -34,9 +34,6 @@ const StatsDashboard = ({
                 <Col xs={24} md={12} className="gutter-row">
                     <Zones stateData={zoneData} />
                 </Col>
-                <Col xs={24} md={12} className="gutter-row">
-                    <Zones stateData={zoneData} />
-                </Col>
             </Row>
         </div>
     )
